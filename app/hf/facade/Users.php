@@ -31,7 +31,7 @@ class Users extends BaseFacade
      */
     public function show()
     {
-        if ( ! $id = $this->input->get('id'))
+        if ( ! $id = $this->getParam('id'))
         {
             throw new Exception('user-id-cannot-be-empty');
         }
@@ -89,15 +89,17 @@ class Users extends BaseFacade
     {
         $options = array();
 
-        if ( ! $options['ids'] = $this->input->get('ids'))
+        if ( ! $options['ids'] = $this->getParam('ids'))
         {
             throw new Exception('user-ids-cannot-be-empty');
         }
 
-        $options['start'] = $this->input->get('start', 1);
-        $options['limit'] = $this->input->get('limit', 20);
+        $options['start'] = $this->getParam('start', 1);
+        $options['limit'] = $this->getParam('limit', 20);
 
         $usersQuery = new UsersQuery;
         return $usersQuery->findAllDetailsByOptions($options);
     }
 }
+
+/* End file */

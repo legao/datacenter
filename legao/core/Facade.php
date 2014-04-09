@@ -26,7 +26,29 @@ namespace Legao;
  */
 class Facade extends Kernel
 {
+    /**
+     * Get all request parameters
+     *
+     * @access public
+     * @return array
+     */
+    public function getParams()
+    {
+        return $this->input->request(null, null, true);
+    }
 
+    // --------------------------------------------------------------------
+    
+    /**
+     * Get only one request parameter by index
+     *
+     * @access public
+     * @return string
+     */
+    public function getParam($index = null, $default = null)
+    {
+        return $this->input->request($index, $default, true);
+    }
 }
 
 /* End file */

@@ -186,8 +186,8 @@ class Entity extends Base
      *
      * @access public
      * @param  integer
-     * @param  mixed $n Index
-     * @return mixed $no_result What to return if the segment index is not found
+     * @param  mixed $n index
+     * @return mixed $no_result what to return if the segment index is not found
      */
     public function segments($n = 0, $noResult = null)
     {

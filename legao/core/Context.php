@@ -27,6 +27,7 @@ namespace Legao;
 class Context
 {
     public $kernel;
+    public $blackboxes;
 
     /**
      * Class constructor
@@ -69,6 +70,9 @@ class Context
                     }
 
                     method_exists($component, 'afterContext') AND $component->afterContext();
+
+                    // save blackbox data every component
+                    $this->blackbox[$name] = $component->getBlackBox();
                 }
             }
         }
@@ -111,7 +115,7 @@ class Context
      */
     public function dispatcherContext(iComponent $dispatcher)
     {
-        $blackbox = $this->kernel->getComponent('Parser')->getBlackBox();
+        $blackbox = $this->blackbox['Parser'];
         $dispatcher->setWSName($blackbox->wsname);
         $dispatcher->setSubdir($blackbox->subdir);
         $dispatcher->setFacade($blackbox->facade);
@@ -129,7 +133,7 @@ class Context
      */
     public function responserContext(iComponent $responser)
     {
-        $blackbox = $this->kernel->getComponent('Dispatcher')->getBlackBox();
+        $blackbox = $this->blackbox['Dispatcher'];
         $responser->analyzer($blackbox->returnData);
         $responser->output();
         return true;

@@ -31,7 +31,7 @@ class Users extends BaseFacade
      */
     public function delete()
     {
-        if ( ! $id = $this->input->post('id'))
+        if ( ! $id = $this->getParam('id'))
         {
             throw new Exception('user-id-cannot-be-empty');
         }

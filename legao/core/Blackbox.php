@@ -68,7 +68,8 @@ abstract class Blackbox
         $refClass = new \ReflectionClass($this);
         $properties = $refClass->getProperties(\ReflectionProperty::IS_PUBLIC);
 
-        foreach ($properties as $property) {
+        foreach ($properties as $property)
+        {
             $name = $property->getName();
             unset($this->$name);
         }
