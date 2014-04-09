@@ -19,14 +19,14 @@ namespace Legao\Dispatcher;
 use Legao\Dispatcher\BlackBox\Recorder;
 
 /**
- * Process dispatch flow class
+ * Route class
  *
  * @package     Legao
  * @category    Component
  * @author      Wang Long <mail@wanglong.name>
  * @link        http://wanglong.name
  */
-class Entity extends Base
+class Route extends Base
 {
     private $_data = null;
 

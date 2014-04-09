@@ -53,9 +53,9 @@ class Bootstrap
      */
     private function _addComponent()
     {
-        $this->kernel->addComponent('Parser', new Parser\Entity);
+        $this->kernel->addComponent('Parser', new Parser\URI);
         $this->kernel->addComponent('Authentication', new Authentication\Signature);
-        $this->kernel->addComponent('Dispatcher', new Dispatcher\Entity);
+        $this->kernel->addComponent('Dispatcher', new Dispatcher\Route);
         $this->kernel->addComponent('Responser', new Responser\JSON);
     }
 

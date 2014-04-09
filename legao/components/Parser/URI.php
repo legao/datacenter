@@ -20,14 +20,14 @@ use Legao\Parser\BlackBox\Recorder;
 use Legao\Utils\String;
 
 /**
- * Process parser flow class
+ * URI class
  *
  * @package     Legao
  * @category    Component
  * @author      Wang Long <mail@wanglong.name>
  * @link        http://wanglong.name
  */
-class Entity extends Base
+class URI extends Base
 {
     private $uriString = '';
     private $segments  = array();
