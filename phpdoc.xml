@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phpdoc>
+	<title>平安好房数据中心</title>
+
+	<parser>
+		<target>docs</target>
+	</parser>
+
+	<transformer>
+    	<target>docs</target>
+  	</transformer>
+
+	<files>
+        <directory>./app/hf/facade</directory>
+		<directory>./app/hf/commands/facade</directory>
+	</files>
+
+	<transformations>
+        <template name="responsive" />
+    </transformations>
+</phpdoc>
